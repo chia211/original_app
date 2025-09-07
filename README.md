@@ -41,9 +41,11 @@ has_many   : schedules
 | Column                 | Type   | Options     |
 | ------------------     | ------ | ----------- |
 | body_temperature(体温) | float |
-| blood_pressure(血圧)   | string | 
+| blood_pressure_systolic（血圧・上）  | string | 
+| blood_pressure＿diastolic　(血圧・下)   | string | 
 | pulse(脈拍)            | integer | 
 | breathing(呼吸)        | integer | 
+| note                  | text     | 
 | measured_at           | datetime | null: false |
 | profile_id            | t.references | null: false,foreign_key: true |
 
