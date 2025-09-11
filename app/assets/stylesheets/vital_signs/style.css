@@ -1,0 +1,23 @@
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  background-color: aquamarine;
+}
+
+.container {
+  width: 100%;
+  background-color: cornflowerblue;
+  display: flex;
+}
+
+.slider {
+  width: 30%;
+  background-color: antiquewhite;
+  margin: 0;
+}
+
+.calender {
+  width: 70%;
+}
