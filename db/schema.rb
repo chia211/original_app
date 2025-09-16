@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_09_07_115830) do
+ActiveRecord::Schema[7.1].define(version: 2025_09_16_134710) do
+  create_table "profiles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "nickname"
+    t.integer "age"
+    t.string "gender"
+    t.integer "height"
+    t.integer "weight"
+    t.text "medical_history"
+    t.date "birthday"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -24,4 +38,19 @@ ActiveRecord::Schema[7.1].define(version: 2025_09_07_115830) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vital_signs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.float "body_temperature"
+    t.string "blood_pressure_systolic"
+    t.string "blood_pressure_diastolic"
+    t.integer "pulse"
+    t.integer "breathing"
+    t.text "note"
+    t.datetime "measured_at"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_vital_signs_on_profile_id"
+  end
+
+  add_foreign_key "profiles", "users"
 end
