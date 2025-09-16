@@ -8,7 +8,7 @@ class CreateVitalSigns < ActiveRecord::Migration[7.1]
       t.integer :breathing
       t.text :note
       t.datetime :measured_at
-      t.references :profile
+      t.references :profile ,foreign_key: true
       t.timestamps
     end
   end
