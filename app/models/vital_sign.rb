@@ -1,0 +1,2 @@
+class VitalSign < ApplicationRecord
+end
