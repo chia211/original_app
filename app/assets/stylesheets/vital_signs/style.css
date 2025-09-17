@@ -29,12 +29,18 @@ li {
 }
 
 .list {
-  width: 80%;
-  height: 50px;
   margin: 50px 0;
+}
+
+.list input,
+.blood-CSS input {
+  width: 100px;       
+  padding: 5px;
+}
+
+.blood-CSS {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color:aliceblue;
+  gap: 10px;          
+  align-items: center; 
 }
 
