@@ -7,8 +7,8 @@
 
 
   <div class="container">
-    <ul class="slider">
-     <%= form_with model: VitalSign.new, url: vital_signs_path do |f| %>
+    <%= form_with model: VitalSign.new, url: vital_signs_path do |f| %>
+      <ul class="slider">
         <li>
           <div class="list">
             <%= f.number_field :body_temperature, placeholder: "体温" %>
@@ -32,7 +32,7 @@
           </div>
         </li>
         <li>
-          <div class="list">
+          <div class="note">
             <%= f.text_area :note, placeholder: "memo" %>
           </div>
         </li>
@@ -43,14 +43,10 @@
             <%= f.datetime_select :measured_at %>
           <% end %>
         </li>
-        <%= f.submit "登録" %>
-      <% end %>
-    </ul>
+      </ul>
+  　  <%= f.submit "登録", class: "submit-btn" %>
+    <% end %>
 
-
-    <div>
-      
-    </div>
     
   </div>
 

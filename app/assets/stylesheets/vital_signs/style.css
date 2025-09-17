@@ -12,35 +12,49 @@ header {
 }
 
 .container {
-  width: 100%;
+  width: 35%;
   background-color: cornflowerblue;
   display: flex;
+  justify-content: center;
 }
 
-.slider {
-  width: 30%;
-  height: 100%;
-  background-color: antiquewhite;
+ul {
+  text-align: center;
   margin: 0;
-}
-
-li {
+  padding: 0;
   list-style: none;
 }
+
+
 
 .list {
   margin: 50px 0;
 }
 
-.list input,
+.list input{
+  width: 150px;
+  padding: 5px;
+}
+
 .blood-CSS input {
-  width: 100px;       
+  width: 80px;       
   padding: 5px;
 }
 
 .blood-CSS {
   display: flex;
+  justify-content: center;
   gap: 10px;          
-  align-items: center; 
 }
 
+
+
+li .note textarea {
+  width: 250px;
+  height: 100px;
+}
+
+.submit-btn {
+  display: block;
+  margin: 0 auto 50px;
+}
