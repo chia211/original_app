@@ -10,24 +10,24 @@
       <ul class="slider">
         <li>
           <div class="temperature-field">
-            <%= f.number_field :body_temperature, placeholder: "体温",style: "text-align: center;", min: 35.0, step: 0.1  %>
+            <%= f.number_field :body_temperature, placeholder: "体温",style: "text-align: center;", step: 0.1, id: "temperature_input"  %>
           </div>
         </li>
         <li>
           <div class="blood-CSS">
-            <%= f.number_field :blood_pressure_systolic, placeholder: "血圧・上",style: "text-align: center;" %>
+            <%= f.number_field :blood_pressure_systolic, placeholder: "血圧・上",style: "text-align: center;",id: "blood_systolic_input" %>
             <span>/</span>
-            <%= f.number_field :blood_pressure_diastolic, placeholder: "血圧・下",style: "text-align: center;" %>
+            <%= f.number_field :blood_pressure_diastolic, placeholder: "血圧・下",style: "text-align: center;",id: "blood_diastolic_input" %>
           </div>
         </li>
         <li>
           <div>
-            <%= f.number_field :pulse, placeholder: "脈拍",style: "text-align: center;" %>
+            <%= f.number_field :pulse, placeholder: "脈拍",style: "text-align: center;",id: "pulse_input" %>
           </div>
         </li>
         <li>
           <div class="breathing-field">
-            <%= f.number_field :breathing, placeholder: "酸素濃度",style: "text-align: center;" %>
+            <%= f.number_field :breathing, placeholder: "酸素濃度",style: "text-align: center;",id: "breathing_input" %>
           </div>
         </li>
         <li>
