@@ -1,43 +1,101 @@
-main {
-  width: 100vw;
-  height: 100vh;
-  background-color: azure;
-}
-
 header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 0 50px;
   background-color: aquamarine;
+  height: 10vh;
+}
+
+main {
+  background-color: azure;
+  display: flex;
 }
 
 .container {
-  width: 100%;
-  background-color: cornflowerblue;
-  display: flex;
-}
-
-.slider {
-  width: 30%;
+  width: 35%;
   height: 100%;
-  background-color: antiquewhite;
-  margin: 0;
+  background-color: cornflowerblue;
+  position: relative;
 }
 
-li {
-  list-style: none;
-}
-
-.list {
-  width: 80%;
-  height: 50px;
-  margin: 50px 0;
+ul {
   display: flex;
+  margin: 0;
+  padding: 40px 0 0;
+  list-style: none;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color:aliceblue;
+  gap: 40px;
 }
 
-.calender {
-  width: 70%;
+li input{
+  width: 150px;
+  padding: 5px;
 }
+
+.temperature-field,
+.breathing-field {
+  position: relative;
+  display: inline-block;
+}
+
+.temperature-field input,
+.breathing-field input  {
+  padding-right: 25px; 
+}
+
+.temperature-field::after,
+.breathing-field::after {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; 
+}
+
+.temperature-field::after{
+  content: "℃";
+}
+
+.breathing-field::after{
+  content: "%";
+
+}
+
+.blood-CSS input {
+  width: 80px;       
+  padding: 5px;
+}
+
+.blood-CSS {
+  display: flex;
+  justify-content: center;
+  gap: 10px;          
+}
+
+
+
+li .note textarea {
+  width: 220px;
+  height: 100px;
+}
+
+.pictogram {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  z-index: 100;
+  width: 60px;
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* =============================================== */
+
+.container2 {
+  width: 65%;
+  background-color: black;
+}
+
