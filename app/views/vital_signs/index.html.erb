@@ -1,17 +1,16 @@
+<header>
+  <div>name</div>
+  <div>profile</div>
+</header>
+
 <main>
-  <header>
-    <div>name</div>
-    <div>profile</div>
-  </header>
-
-
 
   <div class="container">
     <%= form_with model: VitalSign.new, url: vital_signs_path do |f| %>
       <ul class="slider">
         <li>
-          <div class="list">
-            <%= f.number_field :body_temperature, placeholder: "体温",style: "text-align: center;" %>
+          <div class="temperature-field">
+            <%= f.number_field :body_temperature, placeholder: "体温",style: "text-align: center;", min: 35.0, step: 0.1  %>
           </div>
         </li>
         <li>
@@ -22,19 +21,22 @@
           </div>
         </li>
         <li>
-          <div class="list">
+          <div>
             <%= f.number_field :pulse, placeholder: "脈拍",style: "text-align: center;" %>
           </div>
         </li>
         <li>
-          <div class="list">
-            <%= f.number_field :breathing, placeholder: "呼吸",style: "text-align: center;" %>
+          <div class="breathing-field">
+            <%= f.number_field :breathing, placeholder: "酸素濃度",style: "text-align: center;" %>
           </div>
         </li>
         <li>
           <div class="note">
             <%= f.text_area :note, placeholder: "memo" %>
           </div>
+        </li>
+        <li>
+          <%= f.submit "登録", class: "submit-btn" %>
         </li>
         <li>
           <% if action_name == "index" %>
@@ -44,11 +46,12 @@
           <% end %>
         </li>
       </ul>
-      <%= f.submit "登録", class: "submit-btn" %>
     <% end %>
 
     <div class="pictogram" style="background-image: url(<%= asset_path 'cat_cake2.png' %>)"></div>
 
+  </div>
+  <div class="container2">
   </div>
   
   
