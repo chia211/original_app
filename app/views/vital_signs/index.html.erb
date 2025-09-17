@@ -4,38 +4,53 @@
     <div>profile</div>
   </header>
 
+
+
   <div class="container">
     <ul class="slider">
-      <li>
-        <div class="list">
-          <a href="#">体温</a>
-          
-        </div>
-      </li>
-      <li>
-        <div class="list">
-          <a href="#">血圧</a>
-        </div>
-      </li>
-      <li>
-        <div class="list">
-          <a href="#">脈拍</a>
-        </div>
-      </li> 
-      <li>
-        <div class="list">
-          <a href="#">呼吸</a>
-        </div>
-      </li> 
-      <li>
-        <div class="list">
-        </div>
-      </li> 
+     <%= form_with model: VitalSign.new, url: vital_signs_path do |f| %>
+        <li>
+          <div class="list">
+            <%= f.number_field :body_temperature %>
+          </div>
+        </li>
+        <li>
+          <div class="list">
+            <%= f.number_field :blood_pressure_systolic %>
+          </div>
+        </li>
+        <li>
+          <div class="list">
+            <%= f.number_field :blood_pressure_diastolic %>
+          </div>
+        </li>
+        <li>
+          <div class="list">
+            <%= f.number_field :pulse %>
+          </div>
+        </li>
+        <li>
+          <div class="list">
+            <%= f.number_field :breathing %>
+          </div>
+        </li>
+        <li>
+          <div class="list">
+            <%= f.text_area :note %>
+          </div>
+        </li>
+        <li>
+          <div class="list">
+            <%= f.datetime_select :measured_at %>
+          </div>
+        </li>
+        <%= f.submit "登録" %>
+      <% end %>
     </ul>
 
 
-    <div class="calendar">
-     
+    <div>
+      
     </div>
     
   </div>
