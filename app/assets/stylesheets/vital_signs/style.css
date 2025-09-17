@@ -16,6 +16,7 @@ header {
   background-color: cornflowerblue;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 ul {
@@ -57,4 +58,15 @@ li .note textarea {
 .submit-btn {
   display: block;
   margin: 0 auto 50px;
+}
+
+.pictogram {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  z-index: 100;
+  width: 60px;
+  height: 80px;
+  background-size: cover;
+  background-position: center;
 }

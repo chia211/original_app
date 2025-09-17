@@ -11,24 +11,24 @@
       <ul class="slider">
         <li>
           <div class="list">
-            <%= f.number_field :body_temperature, placeholder: "体温" %>
+            <%= f.number_field :body_temperature, placeholder: "体温",style: "text-align: center;" %>
           </div>
         </li>
         <li>
           <div class="blood-CSS">
-            <%= f.number_field :blood_pressure_systolic, placeholder: "血圧・上" %>
+            <%= f.number_field :blood_pressure_systolic, placeholder: "血圧・上",style: "text-align: center;" %>
             <span>/</span>
-            <%= f.number_field :blood_pressure_diastolic, placeholder: "血圧・下" %>
+            <%= f.number_field :blood_pressure_diastolic, placeholder: "血圧・下",style: "text-align: center;" %>
           </div>
         </li>
         <li>
           <div class="list">
-            <%= f.number_field :pulse, placeholder: "脈拍" %>
+            <%= f.number_field :pulse, placeholder: "脈拍",style: "text-align: center;" %>
           </div>
         </li>
         <li>
           <div class="list">
-            <%= f.number_field :breathing, placeholder: "呼吸" %>
+            <%= f.number_field :breathing, placeholder: "呼吸",style: "text-align: center;" %>
           </div>
         </li>
         <li>
@@ -44,11 +44,12 @@
           <% end %>
         </li>
       </ul>
-  　  <%= f.submit "登録", class: "submit-btn" %>
+      <%= f.submit "登録", class: "submit-btn" %>
     <% end %>
 
-    
-  </div>
+    <div class="pictogram" style="background-image: url(<%= asset_path 'cat_cake2.png' %>)"></div>
 
+  </div>
+  
   
 </main>
