@@ -12,10 +12,18 @@
 
   <body>
     <header>
-      <div>
-        name
-      </div>
-      <div>profile</div>
+      <h1 class="grid-6">選択・名前表示</h1>
+      <% if user_signed_in? %>
+        <div class="user_nav grid-6">
+          <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
+          <%= link_to "プロフィール", profiles_path %>
+        </div>
+      <% else %>
+        <div class="grid-6">
+          <%= link_to "ログイン", new_user_session_path %>
+          <%= link_to "新規登録", new_user_registration_path %>
+        </div>
+      <% end %>
     </header>
 
 
