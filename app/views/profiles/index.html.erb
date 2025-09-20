@@ -1,4 +1,4 @@
-<div class="contents">
+<div class="profile-contents">
   <% @profiles.each do |profile| %>
     <div class="profile-card">
       <div class="profile-item">
@@ -30,15 +30,10 @@
         <span class="value"><%= profile.age %> 歳</span>
       </div>
     </div>
-
-    <div class="edit-button">
-      <%= link_to '新規作成', new_profile_path(profile.id) %>
-    </div>
-    <div class="edit-button">
-      <%= link_to '編集', edit_profile_path(profile.id) %>
-    </div>
-    <div class="delete-button">
-      <%= link_to '削除', profile_path(profile.id), data: { turbo_method: :delete } %>
+    <div class="profile-button">
+      <%= link_to '新規作成', new_profile_path(profile.id),class: "sticker new-button" %>
+      <%= link_to '編集', edit_profile_path(profile.id),class: "sticker edit-button" %>
+      <%= link_to '削除', profile_path(profile.id), data: { turbo_method: :delete },class: "sticker delete-button" %>
     </div>
   <% end %>
 </div>

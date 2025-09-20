@@ -1,10 +1,11 @@
 .profile-card {
   max-width: 400px;
-  margin: 50px auto;
+  margin: 100px auto;
   padding: 20px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: relative;
 }
 
 .profile-item {
@@ -26,3 +27,38 @@
 .value {
   color: #333;
 }
+
+.sticker {
+  position: absolute;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
+
+/* 位置＆色 */
+.new-button {
+  top: 130px;
+  right: 60%;
+  background: #007bff;
+  transform: rotate(-3deg);
+}
+
+.edit-button {
+  top: 130px;
+  right: 45%;
+  background: #28a745;
+  transform: rotate(2deg);
+  z-index: -1;
+}
+
+.delete-button {
+  top: 130px;
+  right: 35%;
+  background: #dc3545;
+  transform: rotate(-2deg);
+  z-index: -1;
+}
+
