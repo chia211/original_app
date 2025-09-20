@@ -8,7 +8,23 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
   end
 
-  def create
+  def new
     @profile = Profile.new
   end
+
+  def create
+    @profile = current_user.profiles.new(profile_params)  # user_id を current_user.id でセット
+    if @profile.save
+      redirect_to profiles_path, notice: "プロフィールを作成しました"
+    else
+      render :new
+    end
+  end
+end
+
+
+private
+
+def profile_params
+  params.require(:profile).permit(:nickname, :gender, :height, :weight, :medical_history, :birthday, :age)
 end
