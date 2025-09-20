@@ -31,6 +31,9 @@
       </div>
     </div>
 
+    <div class="edit-button">
+      <%= link_to '編集', edit_profile_path(profile.id) %>
+    </div>
     <div class="delete-button">
       <%= link_to '削除', profile_path(profile.id), data: { turbo_method: :delete } %>
     </div>
