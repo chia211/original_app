@@ -1,10 +1,13 @@
 <div class="profile-contents">
-  <h2>プロフィール選択</h2>
-  <%= form_with url: select_profiles_path, method: :post, local: true do %>
-    <%= select_tag :profile_id,
-      options_from_collection_for_select(@profiles, :id, :nickname, session[:profile_id]) %>
-    <%= submit_tag "切り替え" %>
-  <% end %>
+  
+  <div class="profile-select">
+    <h2>プロフィール選択</h2>
+    <%= form_with url: select_profiles_path, method: :post, local: true do %>
+      <%= select_tag :profile_id,
+        options_from_collection_for_select(@profiles, :id, :nickname, session[:profile_id]) %>
+      <%= submit_tag "切り替え" , class:"submit-button"%>
+    <% end %>
+  </div>
 
 
   <% @profiles.each do |profile| %>
