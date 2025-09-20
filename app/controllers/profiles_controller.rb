@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
 
   def index
-    @profiles = Profile.all
+    @profiles = current_user.profiles
   end
 
   def show
@@ -19,6 +19,12 @@ class ProfilesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    profile = Profile.find(params[:id])
+    profile.destroy
+    redirect_to root_path
   end
 end
 

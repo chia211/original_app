@@ -30,5 +30,9 @@
         <span class="value"><%= profile.age %> 歳</span>
       </div>
     </div>
+
+    <div class="delete-button">
+      <%= link_to '削除', profile_path(profile.id), data: { turbo_method: :delete } %>
+    </div>
   <% end %>
 </div>
