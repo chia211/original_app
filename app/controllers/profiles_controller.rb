@@ -36,6 +36,11 @@ class ProfilesController < ApplicationController
 
   def show
   end
+
+  def select
+    session[:profile_id] = params[:profile_id]
+    redirect_to profiles_path, notice: "プロフィールを切り替えました！"
+  end
 end
 
 
@@ -48,3 +53,4 @@ end
 def set_profile
   @profile = Profile.find(params[:id])
 end
+
