@@ -32,6 +32,9 @@
     </div>
 
     <div class="edit-button">
+      <%= link_to '新規作成', new_profile_path(profile.id) %>
+    </div>
+    <div class="edit-button">
       <%= link_to '編集', edit_profile_path(profile.id) %>
     </div>
     <div class="delete-button">
