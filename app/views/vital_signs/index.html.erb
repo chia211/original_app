@@ -13,6 +13,8 @@
         </li>
         <li>
           <div class="blood-CSS">
+            <%= link_to '血圧履歴', blood_pressure_history_profile_vital_signs_path(@profile), class: "btn" %>
+
             <%= f.number_field :blood_pressure_systolic, placeholder: "血圧・上",style: "text-align: center;",id: "blood_systolic_input" %>
             <span>/</span>
             <%= f.number_field :blood_pressure_diastolic, placeholder: "血圧・下",style: "text-align: center;",id: "blood_diastolic_input" %>
