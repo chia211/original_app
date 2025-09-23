@@ -4,6 +4,8 @@ class VitalSign < ApplicationRecord
   validates :body_temperature, numericality: { greater_than_or_equal_to: 35.0 }
 
 
+  belongs_to :profile
+
   private
 
   def set_measured_at
