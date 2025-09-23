@@ -5,6 +5,8 @@
     <%= form_with model: VitalSign.new, url: profile_vital_signs_path(@profile) do |f| %>
       <ul class="slider">
         <li>
+          <%= link_to '体温履歴', temperature_history_profile_vital_signs_path(@profile), class: "btn" %>
+
           <div class="temperature-field">
             <%= f.number_field :body_temperature, placeholder: "体温",style: "text-align: center;", step: 0.1, id: "temperature_input"  %>
           </div>
@@ -45,7 +47,6 @@
 
 
     <% end %>
-    <%= link_to '体温履歴', temperature_history_profile_vital_signs_path(@profile), class: "btn" %>
 
     <div class="pictogram" style="background-image: url(<%= asset_path '25858438.png' %>)"></div>
 

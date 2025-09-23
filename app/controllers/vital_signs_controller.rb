@@ -3,11 +3,18 @@ class VitalSignsController < ApplicationController
 
   def index
     @vital_signs = VitalSign.all
+    
   end
 
   def create
-    VitalSign.create(vital_sign_params)
-    redirect_to "/vital_signs"
+    @profile = Profile.find(params[:profile_id])
+    @vital_sign = @profile.vital_signs.new(vital_sign_params)
+
+    if @vital_sign.save
+      redirect_to profile_vital_signs_path(@profile), notice: "登録しました"
+    else
+      render :index
+    end
   end
 
   def show
@@ -32,7 +39,7 @@ class VitalSignsController < ApplicationController
 
   private
 
-  
+
   def set_profile
     @profile = Profile.find(params[:profile_id])
   end
