@@ -14,8 +14,9 @@
     <header>
       <h1 class="grid-6">
         <% if user_signed_in? %>
-          <% if current_user.profiles.any? %>
-            <%= current_user.profiles.first.nickname %> さん
+          <% if @profiles.present? && session[:profile_id].present? %>
+            <% current_profile = @profiles.find { |profile| profile.id == session[:profile_id].to_i } %>
+            <%= current_profile.nickname %> さん
           <% else %>
             プロフィール未登録 さん
           <% end %>

@@ -9,6 +9,7 @@ class VitalSignsController < ApplicationController
     redirect_to "/vital_signs"
   end
 
+  
 
   private
 
