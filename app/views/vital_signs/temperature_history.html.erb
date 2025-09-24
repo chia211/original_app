@@ -1,0 +1,14 @@
+<h2><%= @profile.nickname %> さんの体温履歴</h2>
+
+<table>
+  <tr>
+    <th>体温</th>
+    <th>測定日時</th>
+  </tr>
+  <% @temperatures.each do |temp, time| %>
+    <tr>
+      <td><%= temp %> ℃</td>
+      <td><%= time.strftime("%Y-%m-%d %H:%M") %></td>
+    </tr>
+  <% end %>
+</table>

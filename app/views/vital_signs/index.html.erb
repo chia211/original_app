@@ -2,15 +2,19 @@
 <main>
 
   <div class="container">
-    <%= form_with model: VitalSign.new, url: vital_signs_path do |f| %>
-      <ul class="slider">
+    <%= form_with model: VitalSign.new, url: profile_vital_signs_path(@profile) do |f| %>
+      <ul class="input-field">
         <li>
+          <%= link_to '体温', temperature_history_profile_vital_signs_path(@profile), class: "btn" %>
+
           <div class="temperature-field">
             <%= f.number_field :body_temperature, placeholder: "体温",style: "text-align: center;", step: 0.1, id: "temperature_input"  %>
           </div>
         </li>
         <li>
           <div class="blood-CSS">
+            <%= link_to '血圧', blood_pressure_history_profile_vital_signs_path(@profile), class: "btn" %>
+
             <%= f.number_field :blood_pressure_systolic, placeholder: "血圧・上",style: "text-align: center;",id: "blood_systolic_input" %>
             <span>/</span>
             <%= f.number_field :blood_pressure_diastolic, placeholder: "血圧・下",style: "text-align: center;",id: "blood_diastolic_input" %>
@@ -18,16 +22,22 @@
         </li>
         <li>
           <div>
+            <%= link_to '脈拍', pulse_history_profile_vital_signs_path(@profile), class: "btn" %>
+
             <%= f.number_field :pulse, placeholder: "脈拍",style: "text-align: center;",id: "pulse_input" %>
           </div>
         </li>
         <li>
           <div class="breathing-field">
+            <%= link_to '酸素', breathing_history_profile_vital_signs_path(@profile), class: "btn" %>
+
             <%= f.number_field :breathing, placeholder: "酸素濃度",style: "text-align: center;",id: "breathing_input" %>
           </div>
         </li>
         <li>
           <div class="note">
+            <%= link_to 'メモ', note_history_profile_vital_signs_path(@profile), class: "btn" %>
+
             <%= f.text_area :note, placeholder: "memo" %>
           </div>
         </li>
@@ -42,13 +52,30 @@
           <% end %>
         </li>
       </ul>
+
+
     <% end %>
 
     <div class="pictogram" style="background-image: url(<%= asset_path '25858438.png' %>)"></div>
 
   </div>
   <div class="container2">
+  <div class="calendar">
+    <%= month_calendar events: @events, class: "my-calendar" do |date, events| %>
+      <div class="day-header"><%= date.day %></div>
+      <% events.each do |event| %>
+        <div class="event-item"><%= event.title %></div>
+      <% end %>
+    <% end %>
   </div>
-  
+
+  <ul class="record">本日の記録
+    <li>体温：</li>
+    <li>血圧：</li>
+    <li>脈拍：</li>
+    <li>酸素：</li>
+    <li>メモ：</li>
+  </ul>
+</div>
   
 </main>
