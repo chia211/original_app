@@ -3,7 +3,7 @@ main {
 }
 
 .container {
-  width: 40%;
+  width: 50%;
   background-color: cornflowerblue;
   position: relative;
 }
@@ -84,6 +84,26 @@ li .note textarea {
 /* =============================================== */
 
 .container2 {
-  width: 65%;
-  background-color:aquamarine;
+  width: 50%;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  padding: 25px;
+}
+
+tbody {
+  height:200px;
+}
+
+td {
+  width: 50px;
+  height: 30px;
+  border: ridge;
+}
+
+.calendar-heading {
+  text-align: center;
+  margin-top: 20px;
 }
