@@ -2,13 +2,13 @@
 
 
 .profile-select {
-  max-width: 200px;
+  width: 10%;
   height: 200px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   padding: 20px;
-  margin-left: 50px;
+  margin: 50px;
   position: absolute;
 }
 
@@ -18,8 +18,8 @@
 }
 
 .profile-card {
-  max-width: 400px;
-  padding: 60px;
+  max-width: 30%;
+  padding: 30px;
   margin: 50px auto;
   background: #fff;
   border-radius: 12px;
@@ -59,8 +59,8 @@
 
 
 .new-button {
-  top: 100px;
-  left: 30px;
+  /* top: 100px;
+  left: 30px; */
   background: #007bff;
   transform: rotate(-3deg);
 }

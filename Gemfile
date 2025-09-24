@@ -69,3 +69,4 @@ end
 
 
 gem 'devise'
+gem 'simple_calendar'

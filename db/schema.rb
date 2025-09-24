@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_09_16_134710) do
+ActiveRecord::Schema[7.1].define(version: 2025_09_24_031744) do
+  create_table "calendars", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title"
+    t.text "comment"
+    t.date "date"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_calendars_on_profile_id"
+  end
+
   create_table "profiles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "nickname"
     t.integer "age"
@@ -52,5 +62,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_09_16_134710) do
     t.index ["profile_id"], name: "index_vital_signs_on_profile_id"
   end
 
+  add_foreign_key "calendars", "profiles"
   add_foreign_key "profiles", "users"
 end

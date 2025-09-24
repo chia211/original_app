@@ -59,7 +59,14 @@
     <div class="pictogram" style="background-image: url(<%= asset_path '25858438.png' %>)"></div>
 
   </div>
-  <div class="container2">
+  <h1>イベント一覧</h1>
+
+  <%= month_calendar events: @events do |date, events| %>
+    <%= date.day %>
+    <% events.each do |event| %>
+      <div><%= event.title %></div>
+    <% end %>
+  <% end %>
   </div>
   
   
