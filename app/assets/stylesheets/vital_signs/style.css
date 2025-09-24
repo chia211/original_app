@@ -8,7 +8,7 @@ main {
   position: relative;
 }
 
-ul {
+.input-field {
   display: flex;
   margin: 0;
   padding: 40px 0 0;
@@ -106,4 +106,13 @@ td {
 .calendar-heading {
   text-align: center;
   margin-top: 20px;
+}
+
+.simple-calendar .today {
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.selected {
+  background: #ffe6e6; 
 }

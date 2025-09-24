@@ -49,3 +49,21 @@ breathing.addEventListener("focus", function handler() {
   }
   breathing.removeEventListener("focus", handler); 
 });
+
+
+
+
+// カレンダー
+window.addEventListener('load', () => {
+  const tds = document.querySelectorAll("td");
+
+  tds.forEach(td => {
+    td.addEventListener('click', () => {
+      // いま選ばれているセルの色を全部リセット
+      tds.forEach(cell => cell.classList.remove("selected"));
+
+      // クリックしたセルだけ選択状態にする
+      td.classList.add("selected");
+    });
+  });
+});

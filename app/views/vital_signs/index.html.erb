@@ -3,7 +3,7 @@
 
   <div class="container">
     <%= form_with model: VitalSign.new, url: profile_vital_signs_path(@profile) do |f| %>
-      <ul class="slider">
+      <ul class="input-field">
         <li>
           <%= link_to '体温', temperature_history_profile_vital_signs_path(@profile), class: "btn" %>
 
@@ -68,6 +68,14 @@
       <% end %>
     <% end %>
   </div>
+
+  <ul class="record">本日の記録
+    <li>体温：</li>
+    <li>血圧：</li>
+    <li>脈拍：</li>
+    <li>酸素：</li>
+    <li>メモ：</li>
+  </ul>
 </div>
   
 </main>
