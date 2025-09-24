@@ -1,7 +1,7 @@
 <div class="profile-contents">
   
   <div class="profile-select">
-    <h2>プロフィール選択</h2>
+    <div>プロフィール選択</div>
     <%= form_with url: select_profiles_path, method: :post, local: true do %>
       <%= select_tag :profile_id,
         options_from_collection_for_select(@profiles, :id, :nickname, session[:profile_id]) %>

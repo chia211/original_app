@@ -1,12 +1,9 @@
-
 main {
-  background-color: azure;
   display: flex;
 }
 
 .container {
-  width: 35%;
-  height: 100%;
+  width: 40%;
   background-color: cornflowerblue;
   position: relative;
 }
@@ -22,7 +19,7 @@ ul {
 }
 
 li input{
-  width: 150px;
+  width: 100px;
   padding: 5px;
 }
 

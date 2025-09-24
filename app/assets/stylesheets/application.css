@@ -14,10 +14,14 @@
  *= require_self
  */
 
+
+
 body {
   background-color: #000; 
   color: #e0e0e0; /* 文字色 */
   min-height: 100vh;
+  font-size: 16px;
+
 }
 
 .body__container{
@@ -25,7 +29,7 @@ body {
   flex-direction: column;
   padding: 1rem 0;
   background-color: #F5F5F5;
-  color: #fff;
+  color: #595959;
   width: 100%;
   max-width: 800px; /* PCでも一定の大きさを保つ */
   margin: 0 auto;
@@ -45,9 +49,7 @@ header {
   height: 10vh;
 }
 
-.grid-6 {
-  font-size: 20px;
-}
+
 
 
 .grid-6 a {

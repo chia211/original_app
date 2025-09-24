@@ -5,7 +5,7 @@
     <%= form_with model: VitalSign.new, url: profile_vital_signs_path(@profile) do |f| %>
       <ul class="slider">
         <li>
-          <%= link_to '体温履歴', temperature_history_profile_vital_signs_path(@profile), class: "btn" %>
+          <%= link_to '体温', temperature_history_profile_vital_signs_path(@profile), class: "btn" %>
 
           <div class="temperature-field">
             <%= f.number_field :body_temperature, placeholder: "体温",style: "text-align: center;", step: 0.1, id: "temperature_input"  %>
@@ -13,7 +13,7 @@
         </li>
         <li>
           <div class="blood-CSS">
-            <%= link_to '血圧履歴', blood_pressure_history_profile_vital_signs_path(@profile), class: "btn" %>
+            <%= link_to '血圧', blood_pressure_history_profile_vital_signs_path(@profile), class: "btn" %>
 
             <%= f.number_field :blood_pressure_systolic, placeholder: "血圧・上",style: "text-align: center;",id: "blood_systolic_input" %>
             <span>/</span>
@@ -22,21 +22,21 @@
         </li>
         <li>
           <div>
-            <%= link_to '脈拍履歴', pulse_history_profile_vital_signs_path(@profile), class: "btn" %>
+            <%= link_to '脈拍', pulse_history_profile_vital_signs_path(@profile), class: "btn" %>
 
             <%= f.number_field :pulse, placeholder: "脈拍",style: "text-align: center;",id: "pulse_input" %>
           </div>
         </li>
         <li>
           <div class="breathing-field">
-            <%= link_to '酸素濃度履歴', breathing_history_profile_vital_signs_path(@profile), class: "btn" %>
+            <%= link_to '酸素', breathing_history_profile_vital_signs_path(@profile), class: "btn" %>
 
             <%= f.number_field :breathing, placeholder: "酸素濃度",style: "text-align: center;",id: "breathing_input" %>
           </div>
         </li>
         <li>
           <div class="note">
-            <%= link_to 'memo履歴', note_history_profile_vital_signs_path(@profile), class: "btn" %>
+            <%= link_to 'メモ', note_history_profile_vital_signs_path(@profile), class: "btn" %>
 
             <%= f.text_area :note, placeholder: "memo" %>
           </div>

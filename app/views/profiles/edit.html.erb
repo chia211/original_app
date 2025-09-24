@@ -1,6 +1,6 @@
 <div class="contents">
   <div class="new_profile">
-    <h3>編集</h3>
+    <div>編集</div>
     <%= form_with(model: @profile, local: true) do |form| %>
       <%= form.text_field :nickname, placeholder: "ニックネーム" %>
       <%= form.text_field :gender, placeholder: "性別" %>
