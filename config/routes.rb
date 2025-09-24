@@ -10,6 +10,8 @@ Rails.application.routes.draw do
         get :temperature_history
         get :blood_pressure_history
         get :pulse_history
+        get :breathing_history
+        get :note_history
       end
     end
   end

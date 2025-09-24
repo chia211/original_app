@@ -35,6 +35,11 @@ class VitalSignsController < ApplicationController
   def pulse_history
     @pulses = @profile.vital_signs.order(measured_at: :desc).pluck(:pulse, :measured_at)
   end
+
+  # memo履歴
+  def note_history
+    @memos = @profile.vital_signs.order(measured_at: :desc).pluck(:note, :measured_at)
+  end
   
 
   private
