@@ -40,10 +40,6 @@ class VitalSignsController < ApplicationController
     @breathings = @profile.vital_signs.order(measured_at: :desc)
   end
 
-  # memo履歴
-  def note_history
-    @memos = @profile.vital_signs.order(measured_at: :desc)
-  end
   
 
   private

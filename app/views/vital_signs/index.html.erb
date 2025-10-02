@@ -35,13 +35,6 @@
           </div>
         </li>
         <li>
-          <div class="note">
-            <%= link_to 'メモ', note_history_profile_vital_signs_path(@profile), class: "btn" %>
-
-            <%= f.text_area :note, placeholder: "memo" %>
-          </div>
-        </li>
-        <li>
           <%= f.submit "登録", class: "submit-btn" %>
         </li>
         <li>
@@ -59,23 +52,55 @@
     <div class="pictogram" style="background-image: url(<%= asset_path '25858438.png' %>)"></div>
 
   </div>
-  <div class="container2">
-  <div class="calendar">
-    <%= month_calendar events: @events, class: "my-calendar" do |date, events| %>
-      <div class="day-header"><%= date.day %></div>
-      <% events.each do |event| %>
-        <div class="event-item"><%= event.title %></div>
+
+
+  <div class="left-side>
+
+    <div class="container2">
+    <div class="calendar">
+      <%= month_calendar events: @events, class: "my-calendar" do |date, events| %>
+        <div class="day-header"><%= date.day %></div>
+        <% events.each do |event| %>
+          <div class="event-item"><%= event.title %></div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+
+    <%# <ul class="record">本日の記録
+      <li>体温：</li>
+      <li>血圧：</li>
+      <li>脈拍：</li>
+      <li>酸素：</li>
+      <li>メモ：</li>
+    </ul> %>
+
+    <div class="container3">
+
+      <%= form_with model: Memo.new, url: profile_memos_path(@profile), local: true do |f| %>
+        <ul class="input-field-memos">
+          <li>
+            <div class="memo-title">
+              <%= f.text_area :title, placeholder: "タイトル", class: "title-input" %>
+            </div>
+          </li>
+          <li>
+            <div class="memo-field">
+              <%= f.text_area :content, placeholder: "メモ", class: "content-input"%>
+            </div>
+          </li>
+          <li>
+            <%= f.submit "登録", class: "submit-btn" %>
+          </li>
+          <li>
+            <div>
+              <%= link_to '一覧', profile_memos_path(@profile), class: "btn" %>
+            </div>
+          </li>
+        </ul>
+        
+      <% end %>
+    </div>
   </div>
 
-  <%# <ul class="record">本日の記録
-    <li>体温：</li>
-    <li>血圧：</li>
-    <li>脈拍：</li>
-    <li>酸素：</li>
-    <li>メモ：</li>
-  </ul> %>
-</div>
   
 </main>

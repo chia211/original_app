@@ -14,5 +14,9 @@ Rails.application.routes.draw do
         get :note_history
       end
     end
+
+    resources :memos
   end
+
+
 end

@@ -3,5 +3,6 @@ class Profile < ApplicationRecord
 
   belongs_to :user
   has_many :vital_signs
+  has_many :memos
 
 end

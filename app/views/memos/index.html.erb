@@ -1,0 +1,16 @@
+<h2><%= @profile.nickname %> さんのmemo履歴</h2>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th>
+    <th>日時</th>
+  </tr>
+  <% @memos.each do |m| %>
+    <tr>
+      <td><%= m.title %></td>
+      <td><%= m.content %></td>
+      <td><%= m.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+    </tr>
+  <% end %>
+</table>

@@ -83,9 +83,14 @@ li .note textarea {
 
 /* =============================================== */
 
-.container2 {
+.left-side {
   width: 50%;
 }
+
+
+/* =============================================== */
+
+
 
 table {
   width: 100%;
@@ -116,3 +121,22 @@ td {
 .selected {
   background: #ffe6e6; 
 }
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+
+
+.input-field-memos {
+  list-style: none;
+  padding: 0;
+}
+
+.title-input {
+  width: 300px;
+}
+
+.content-input {
+  width: 300px;
+  height: 100px;
+}
+
+
