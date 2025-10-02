@@ -1,5 +1,14 @@
 <h2><%= @profile.nickname %> さんの酸素濃度履歴</h2>
 
 <table>
-
+  <tr>
+    <th>酸素</th>
+    <th>測定日時</th>
+  </tr>
+  <% @breathings.each do |br| %>
+  <tr>
+    <td><%= br.breathing %></td>
+    <td><%= br.measured_at.strftime("%Y-%m-%d %H:%M") %></td>
+  </tr>
+<% end %>
 </table>

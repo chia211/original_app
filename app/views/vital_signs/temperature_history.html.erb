@@ -5,10 +5,10 @@
     <th>体温</th>
     <th>測定日時</th>
   </tr>
-  <% @temperatures.each do |temp, time| %>
-    <tr>
-      <td><%= temp %> ℃</td>
-      <td><%= time.strftime("%Y-%m-%d %H:%M") %></td>
-    </tr>
-  <% end %>
+  <% @temperatures.each do |tem| %>
+  <tr>
+    <td><%= tem.body_temperature %></td>
+    <td><%= tem.measured_at.strftime("%Y-%m-%d %H:%M") %></td>
+  </tr>
+<% end %>
 </table>

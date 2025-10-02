@@ -64,6 +64,13 @@ window.addEventListener('load', () => {
 
       // クリックしたセルだけ選択状態にする
       td.classList.add("selected");
+
+      
     });
   });
+
+
 });
+
+
+

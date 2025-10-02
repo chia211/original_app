@@ -23,22 +23,26 @@ class VitalSignsController < ApplicationController
 
   # 体温履歴
   def temperature_history
-    @temperatures = @profile.vital_signs.order(measured_at: :desc).pluck(:body_temperature, :measured_at)
+    @temperatures = @profile.vital_signs.order(measured_at: :desc)
   end
 
   # 血圧履歴
   def blood_pressure_history
-    @blood_pressures = @profile.vital_signs.order(measured_at: :desc).pluck(:blood_pressure_systolic, :blood_pressure_diastolic, :measured_at)
+    @blood_pressures = @profile.vital_signs.order(measured_at: :desc)
   end
 
   # 脈拍履歴
   def pulse_history
-    @pulses = @profile.vital_signs.order(measured_at: :desc).pluck(:pulse, :measured_at)
+    @pulses = @profile.vital_signs.order(measured_at: :desc)
+  end
+  # 酸素履歴
+  def breathing_history
+    @breathings = @profile.vital_signs.order(measured_at: :desc)
   end
 
   # memo履歴
   def note_history
-    @memos = @profile.vital_signs.order(measured_at: :desc).pluck(:note, :measured_at)
+    @memos = @profile.vital_signs.order(measured_at: :desc)
   end
   
 

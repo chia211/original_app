@@ -1,5 +1,14 @@
 <h2><%= @profile.nickname %> さんの体温履歴</h2>
 
 <table>
-  
+  <tr>
+    <th>血圧</th>
+    <th>測定日時</th>
+  </tr>
+  <% @blood_pressures.each do |bp| %>
+  <tr>
+    <td><%= bp.blood_pressure_systolic %>/<%= bp.blood_pressure_diastolic %> mmHg</td>
+    <td><%= bp.measured_at.strftime("%Y-%m-%d %H:%M") %></td>
+  </tr>
+<% end %>
 </table>

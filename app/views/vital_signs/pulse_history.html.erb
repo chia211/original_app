@@ -1,5 +1,14 @@
 <h2><%= @profile.nickname %> さんの脈拍履歴</h2>
 
 <table>
-
+  <tr>
+    <th>脈拍</th>
+    <th>測定日時</th>
+  </tr>
+  <% @pulses.each do |p| %>
+  <tr>
+    <td><%= p.pulse %> </td>
+    <td><%= p.measured_at.strftime("%Y-%m-%d %H:%M") %></td>
+  </tr>
+<% end %>
 </table>
