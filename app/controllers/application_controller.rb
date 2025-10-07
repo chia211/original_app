@@ -10,8 +10,7 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
-
-
+  
   def set_selected_profile
     if session[:profile_id].present?
       @selected_profile = Profile.find_by(id: session[:profile_id])

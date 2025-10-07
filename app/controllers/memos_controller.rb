@@ -17,7 +17,11 @@ class MemosController < ApplicationController
   private
 
   def set_profile
-    @profile = Profile.find(params[:profile_id])
+    if session[:profile_id].present?
+      @profile = current_user.profiles.find_by(id: session[:profile_id])
+    else
+      @profile = current_user.profiles.first
+    end
   end
 
    def memo_params
