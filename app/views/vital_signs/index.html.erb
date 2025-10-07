@@ -31,7 +31,7 @@
           <div class="breathing-field">
             <%= link_to '酸素', breathing_history_profile_vital_signs_path(@selected_profile), class: "btn" %>
 
-            <%= f.number_field :breathing, placeholder: "酸素濃度",style: "text-align: center;",id: "breathing_input" %>
+            <%= f.number_field :breathing, placeholder: "酸素濃度",style: "text-align: center;",id: "breathing_input", max:100, min:0 %>
           </div>
         </li>
         <li>
@@ -54,7 +54,7 @@
   </div>
 
 
-  <div class="left-side>
+  <div class="left-side">
 
     <div class="container2">
     <div class="calendar">
