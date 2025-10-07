@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile , only: [:edit, :show]
+  before_action :set_profile , only: [:edit, :show, :select]
   before_action :authenticate_user!
 
   def index
@@ -37,9 +37,10 @@ class ProfilesController < ApplicationController
   def show
   end
 
+
   def select
-    session[:profile_id] = params[:profile_id]
-    redirect_to profiles_path, notice: "プロフィールを切り替えました！"
+    session[:selected_profile_id] = @profile.id
+    redirect_to root_path, notice: "#{@profile.nickname} さんを選択しました"
   end
 end
 

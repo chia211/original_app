@@ -46,7 +46,7 @@ class VitalSignsController < ApplicationController
 
 
   def set_profile
-    @profile = Profile.find(params[:profile_id])
+    @profile = current_user.profiles
   end
 
   def vital_sign_params
