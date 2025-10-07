@@ -47,7 +47,16 @@ class VitalSignsController < ApplicationController
 
 
   def set_profile
-    @profile = current_user.profiles
+    if user_signed_in?
+      # セッションに選択中のプロフィールIDがあればそれを取得
+      @selected_profile = current_user.profiles.find_by(id: session[:profile_id])
+      
+      # なければ最初のプロフィールをセット
+      @selected_profile ||= current_user.profiles.first
+    else
+      # 未ログイン時はログイン画面へ
+      redirect_to new_user_session_path, alert: "ログインしてください"
+    end
   end
 
   def vital_sign_params
