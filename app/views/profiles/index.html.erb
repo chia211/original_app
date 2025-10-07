@@ -11,43 +11,42 @@
 
 
 
-  <% @profiles.each do |profile| %>
-    <% if profile.id == session[:profile_id].to_i %>
+  <% if @selected_profile.present? %>
       <div class="profile-card">
         <div class="profile-item">
           <span class="label">ニックネーム</span>
-          <span class="value"><%= profile.nickname %></span>
+          <span class="value"><%= @selected_profile.nickname %></span>
         </div>
         <div class="profile-item">
           <span class="label">性別</span>
-          <span class="value"><%= profile.gender %></span>
+          <span class="value"><%= @selected_profile.gender %></span>
         </div>
         <div class="profile-item">
           <span class="label">身長</span>
-          <span class="value"><%= profile.height %> cm</span>
+          <span class="value"><%= @selected_profile.height %> cm</span>
         </div>
         <div class="profile-item">
           <span class="label">体重</span>
-          <span class="value"><%= profile.weight %> kg</span>
+          <span class="value"><%= @selected_profile.weight %> kg</span>
         </div>
         <div class="profile-item">
           <span class="label">病歴</span>
-          <span class="value"><%= profile.medical_history %></span>
+          <span class="value"><%= @selected_profile.medical_history %></span>
         </div>
         <div class="profile-item">
           <span class="label">誕生日</span>
-          <span class="value"><%= profile.birthday %></span>
+          <span class="value"><%= @selected_profile.birthday %></span>
         </div>
         <div class="profile-item">
           <span class="label">年齢</span>
-          <span class="value"><%= profile.age %> 歳</span>
+          <span class="value"><%= @selected_profile.age %> 歳</span>
         </div>
       </div>
       <div class="profile-button">
-        <%= link_to '新規作成', new_profile_path(profile.id),class: "sticker new-button" %>
-        <%= link_to '編集', edit_profile_path(profile.id),class: "sticker edit-button" %>
-        <%= link_to '削除', profile_path(profile.id), data: { turbo_method: :delete },class: "sticker delete-button" %>
+        <%= link_to '新規作成', new_profile_path(@selected_profile.id),class: "sticker new-button" %>
+        <%= link_to '編集', edit_profile_path(@selected_profile.id),class: "sticker edit-button" %>
+        <%= link_to '削除', profile_path(@selected_profile.id), data: { turbo_method: :delete },class: "sticker delete-button" %>
       </div>
-    <%end%>
+ 
   <% end %>
 </div>

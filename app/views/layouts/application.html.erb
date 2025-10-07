@@ -17,21 +17,12 @@
     <header>
       <div class="grid-6">
         <% if user_signed_in? %>
-          <% if session[:selected_profile_id].present? %>
-            <% selected_profile = current_user.profiles.find_by(id: session[:selected_profile_id]) %>
-            <% if selected_profile %>
-              <%= selected_profile.nickname %> さん
-            <% else %>
-              プロフィール未登録 さん
-            <% end %>
-          <% else %>
-            プロフィール未登録 さん
-          <% end %>
+         <%= @selected_profile.present? ? "#{@selected_profile.nickname} さん" : "プロフィール未登録 さん" %>
         <% else %>
-          ゲストさん、ようこそ！
+         ゲストさん、ようこそ！
         <% end %>
-
       </div>
+      
       <% if user_signed_in? %>
         <div class="user_nav grid-6">
           <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>

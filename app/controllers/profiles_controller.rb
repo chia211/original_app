@@ -39,8 +39,8 @@ class ProfilesController < ApplicationController
 
 
   def select
-    session[:selected_profile_id] = @profile.id
-    redirect_to root_path, notice: "#{@profile.nickname} さんを選択しました"
+    session[:profile_id] = params[:profile_id]
+    redirect_to profiles_path, notice: "プロフィールを切り替えました"
   end
 end
 

@@ -23,21 +23,21 @@ class VitalSignsController < ApplicationController
 
   # 体温履歴
   def temperature_history
-    @temperatures = @profile.vital_signs.order(measured_at: :desc)
+    @temperatures = @selected_profile.vital_signs.order(measured_at: :desc)
   end
 
   # 血圧履歴
   def blood_pressure_history
-    @blood_pressures = @profile.vital_signs.order(measured_at: :desc)
+    @blood_pressures = @selected_profile.vital_signs.order(measured_at: :desc)
   end
 
   # 脈拍履歴
   def pulse_history
-    @pulses = @profile.vital_signs.order(measured_at: :desc)
+    @pulses = @selected_profile.vital_signs.order(measured_at: :desc)
   end
   # 酸素履歴
   def breathing_history
-    @breathings = @profile.vital_signs.order(measured_at: :desc)
+    @breathings = @selected_profile.vital_signs.order(measured_at: :desc)
   end
 
   
