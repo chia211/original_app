@@ -1,53 +1,48 @@
-// 最初のフォーカス時だけ36.0をセット
+// クリック時に36.0をセット
 const tempInput = document.getElementById("temperature_input");
 
-tempInput.addEventListener("focus", function handler() {
+tempInput.addEventListener("click", function handler() {
   if (tempInput.value === "") {
     tempInput.value = 36.0;
   }
-  tempInput.removeEventListener("focus", handler); // 一度だけ実行
 });
 
-// 最初のフォーカス時だけ120をセット
+// クリック時に120をセット
 const blood_s = document.getElementById("blood_systolic_input");
 
-blood_s.addEventListener("focus", function handler() {
+blood_s.addEventListener("click", function handler() {
   if (blood_s.value === "") {
     blood_s.value = 120;
   }
-  blood_s.removeEventListener("focus", handler); 
 });
 
 
-// 最初のフォーカス時だけ80をセット
+// クリック時に80をセット
 const blood_d = document.getElementById("blood_diastolic_input");
 
-blood_d.addEventListener("focus", function handler() {
+blood_d.addEventListener("click", function handler() {
   if (blood_d.value === "") {
     blood_d.value = 80;
   }
-  blood_d.removeEventListener("focus", handler); 
 });
 
-// 最初のフォーカス時だけ80をセット
+// クリック時に80をセット
 const pulse = document.getElementById("pulse_input");
 
-pulse.addEventListener("focus", function handler() {
+pulse.addEventListener("click", function handler() {
   if (pulse.value === "") {
     pulse.value = 80;
   }
-  pulse.removeEventListener("focus", handler); 
 });
 
 
-// 最初のフォーカス時だけ100をセット
+// クリック時に100をセット
 const breathing = document.getElementById("breathing_input");
 
-breathing.addEventListener("focus", function handler() {
+breathing.addEventListener("click", function handler() {
   if (breathing.value === "") {
     breathing.value = 100;
   }
-  breathing.removeEventListener("focus", handler); 
 });
 
 
