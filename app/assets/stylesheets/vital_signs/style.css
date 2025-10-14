@@ -4,7 +4,7 @@ main {
 
 .container {
   width: 50%;
-  background-color: cornflowerblue;
+  background-color: #F0F0F0;
   position: relative;
 }
 
@@ -16,6 +16,10 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 40px;
+}
+
+.input-field li {
+  display: flex;
 }
 
 li input{
@@ -38,7 +42,7 @@ li input{
 .breathing-field::after {
   position: absolute;
   right: 10px;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   pointer-events: none; 
 }
@@ -80,6 +84,7 @@ li .note textarea {
   background-size: cover;
   background-position: center;
 }
+
 
 /* =============================================== */
 
@@ -139,4 +144,12 @@ td {
   height: 100px;
 }
 
+.submit-btn {
+  width: 100px;
+}
 
+.btn-field {
+  width: 100%;
+  display: flex;
+  justify-content:space-between;
+}

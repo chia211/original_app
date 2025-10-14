@@ -1,9 +1,14 @@
 .Log_in {
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
   width: 300px;
   
 }
+
+.Log_in_title {
+  margin-bottom: 20px;
+  text-align: center;
+} 
 
 form {
   display: flex;

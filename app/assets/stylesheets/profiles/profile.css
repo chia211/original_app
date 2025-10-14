@@ -48,13 +48,20 @@
 }
 
 .sticker {
-  position: absolute;
   padding: 6px 14px;
   border-radius: 4px;
   font-weight: bold;
   color: #fff;
   text-decoration: none;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
+
+.profile-button {
+  position: absolute;
+  bottom: -15px;
+  right: 10px;
+  display: flex;
+  gap: 10px; 
 }
 
 
@@ -66,15 +73,13 @@
 }
 
 .edit-button {
-  bottom: 20px;
-  right: 45%;
+
   background: #28a745;
   transform: rotate(2deg);
 }
 
 .delete-button {
-  bottom: 20px;
-  right: 35%;
+
   background: #dc3545;
   transform: rotate(-2deg);
 }

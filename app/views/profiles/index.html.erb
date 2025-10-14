@@ -41,12 +41,14 @@
           <span class="label">年齢</span>
           <span class="value"><%= @selected_profile.age %> 歳</span>
         </div>
+
+        <div class="profile-button">
+          <%= link_to '新規作成', new_profile_path(@selected_profile.id),class: "sticker new-button" %>
+          <%= link_to '編集', edit_profile_path(@selected_profile.id),class: "sticker edit-button" %>
+          <%= link_to '削除', profile_path(@selected_profile.id), data: { turbo_method: :delete },class: "sticker delete-button" %>
+        </div>
       </div>
-      <div class="profile-button">
-        <%= link_to '新規作成', new_profile_path(@selected_profile.id),class: "sticker new-button" %>
-        <%= link_to '編集', edit_profile_path(@selected_profile.id),class: "sticker edit-button" %>
-        <%= link_to '削除', profile_path(@selected_profile.id), data: { turbo_method: :delete },class: "sticker delete-button" %>
-      </div>
+      
  
   <% end %>
 </div>
