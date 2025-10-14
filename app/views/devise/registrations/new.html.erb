@@ -1,6 +1,6 @@
 <div class="sign_up row">
   <div class="sign_up">
-    <div>Sign up</div>
+    <div class="sign_up_title">Sign up</div>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 

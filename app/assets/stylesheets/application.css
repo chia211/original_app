@@ -17,17 +17,21 @@
 
 
 body {
-  background-color: #000; 
-  color: #e0e0e0; /* 文字色 */
+  background-image: url('/assets/back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+    background-color: rgba(255,255,255,0.6); /* 淡くする色 */
+  background-blend-mode: lighten; /* または overlay, soft-light */
+  color: #e0e0e0;
   min-height: 100vh;
   font-size: 16px;
-
+  margin: 0;
 }
 
 .body__container{
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
   background-color: #F5F5F5;
   color: #595959;
   width: 100%;
@@ -45,18 +49,20 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
-  background-color:greenyellow;
+  background-color:#B2F18C;
   height: 10vh;
 }
 
+.grid-6 {
+  font-weight: bold;
+}
 
 
 
 .grid-6 a {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff; 
+  color: #f9f9f9; 
   text-decoration: none;
   border-radius: 6px; 
   font-weight: bold;      

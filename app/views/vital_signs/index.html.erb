@@ -5,32 +5,28 @@
     <%= form_with model: VitalSign.new, url: profile_vital_signs_path(@selected_profile) do |f| %>
       <ul class="input-field">
         <li>
-          <%= link_to '体温', temperature_history_profile_vital_signs_path(@selected_profile), class: "btn" %>
-
+          <%= link_to image_tag("memo_icon.png", alt: "体温", class: "icon"), temperature_history_profile_vital_signs_path(@selected_profile), class: "btn" %>
           <div class="temperature-field">
             <%= f.number_field :body_temperature, placeholder: "体温",style: "text-align: center;", step: 0.1, id: "temperature_input"  %>
           </div>
         </li>
-        <li>
+        <li>  
+          <%= link_to image_tag("memo_icon.png", alt: "血圧", class: "icon"), blood_pressure_history_profile_vital_signs_path(@selected_profile), class: "btn" %>
           <div class="blood-CSS">
-            <%= link_to '血圧', blood_pressure_history_profile_vital_signs_path(@selected_profile), class: "btn" %>
-
             <%= f.number_field :blood_pressure_systolic, placeholder: "血圧・上",style: "text-align: center;",id: "blood_systolic_input" %>
             <span>/</span>
             <%= f.number_field :blood_pressure_diastolic, placeholder: "血圧・下",style: "text-align: center;",id: "blood_diastolic_input" %>
           </div>
         </li>
         <li>
+          <%= link_to image_tag("memo_icon.png", alt: "脈拍", class: "icon"), pulse_history_profile_vital_signs_path(@selected_profile), class: "btn" %>
           <div>
-            <%= link_to '脈拍', pulse_history_profile_vital_signs_path(@selected_profile), class: "btn" %>
-
             <%= f.number_field :pulse, placeholder: "脈拍",style: "text-align: center;",id: "pulse_input" %>
           </div>
         </li>
         <li>
+          <%= link_to image_tag("memo_icon.png", alt: "酸素", class: "icon"), breathing_history_profile_vital_signs_path(@selected_profile), class: "btn" %>
           <div class="breathing-field">
-            <%= link_to '酸素', breathing_history_profile_vital_signs_path(@selected_profile), class: "btn" %>
-
             <%= f.number_field :breathing, placeholder: "酸素濃度",style: "text-align: center;",id: "breathing_input", max:100, min:0 %>
           </div>
         </li>
@@ -88,14 +84,14 @@
               <%= f.text_area :content, placeholder: "メモ", class: "content-input"%>
             </div>
           </li>
-          <li>
-            <%= f.submit "登録", class: "submit-btn" %>
-          </li>
-          <li>
+          <li class="btn-field">
+            <div>
+              <%= f.submit "登録", class: "submit-btn" %>
+            </div>
             <div>
               <%= link_to '一覧', profile_memos_path(@selected_profile), class: "btn" %>
             </div>
-          </li>
+          <li>
         </ul>
         
       <% end %>
