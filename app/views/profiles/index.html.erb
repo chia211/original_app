@@ -2,10 +2,10 @@
   
   <div class="profile-select">
     <div>profile</div>
-    <%= form_with url: select_profiles_path, method: :post, local: true do %>
+    <%= form_with url: select_profile_path(session[:profile_id] || 1), method: :post, local: true do %>
       <%= select_tag :profile_id,
-        options_from_collection_for_select(@profiles, :id, :nickname, session[:profile_id]) %>
-      <%= submit_tag "切り替え" , class:"submit-button"%>
+        options_from_collection_for_select(@profiles, :id, :nickname, session[:profile_id])  %>
+      <%= submit_tag "切り替え", class: "submit-button" %>
     <% end %>
   </div>
 

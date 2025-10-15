@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "vital_signs#index", profile_id: 1
 
   resources :profiles do
-    post :select, on: :collection
+    post :select, on: :member
     
     resources :vital_signs do
       collection do

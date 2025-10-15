@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :set_selected_profile
 
   def set_profile
-    @profile = Profile.find(params[:profile_id])
+    @profile = Profile.find(params[:id])
   end
 
   private

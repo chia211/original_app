@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile , only: [:edit, :show, :select]
+  before_action :set_profile , only: [:edit, :show]
   before_action :authenticate_user!
 
   def index
@@ -22,7 +22,7 @@ class ProfilesController < ApplicationController
   def destroy
     profile = Profile.find(params[:id])
     profile.destroy
-    redirect_to root_path
+    redirect_to profiles_path
   end
 
   def edit
