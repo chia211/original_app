@@ -6,9 +6,12 @@
     <th>測定日時</th>
   </tr>
   <% @breathings.each do |br| %>
-  <tr>
-    <td><%= br.breathing %></td>
-    <td><%= br.measured_at.strftime("%Y-%m-%d %H:%M") %></td>
-  </tr>
-<% end %>
+    <%# breathing が入力されている場合のみ表示 %>
+    <% if br.breathing.present? %>
+      <tr>
+        <td><%= br.breathing %></td>
+        <td><%= br.measured_at.strftime("%Y-%m-%d %H:%M") if br.measured_at.present? %></td>
+      </tr>
+    <% end %>
+  <% end %>
 </table>

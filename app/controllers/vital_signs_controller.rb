@@ -18,9 +18,8 @@ class VitalSignsController < ApplicationController
     end
   end
 
-  def show
-    
-  end
+
+
 
   # 体温履歴
   def temperature_history

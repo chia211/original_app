@@ -6,9 +6,12 @@
     <th>測定日時</th>
   </tr>
   <% @temperatures.each do |tem| %>
-  <tr>
-    <td><%= tem.body_temperature %></td>
-    <td><%= tem.measured_at.strftime("%Y-%m-%d %H:%M") %></td>
-  </tr>
+    <%# body_temperature が入力されている場合のみ表示 %>
+    <% if tem.body_temperature.present? %>
+      <tr>
+        <td><%= tem.body_temperature %></td>
+        <td><%= tem.measured_at.strftime("%Y-%m-%d %H:%M") if tem.measured_at.present?%></td>
+      </tr>
+    <% end %>
 <% end %>
 </table>

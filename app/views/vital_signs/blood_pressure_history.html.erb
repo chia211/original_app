@@ -1,14 +1,21 @@
-<h2><%= @selected_profile.nickname %> さんの体温履歴</h2>
+<h2><%= @selected_profile.nickname %> さんの血圧履歴</h2>
 
 <table>
   <tr>
     <th>血圧</th>
     <th>測定日時</th>
   </tr>
-  <% @blood_pressures.each do |bp| %>
-  <tr>
-    <td><%= bp.blood_pressure_systolic %>/<%= bp.blood_pressure_diastolic %> mmHg</td>
-    <td><%= bp.measured_at.strftime("%Y-%m-%d %H:%M") %></td>
-  </tr>
-<% end %>
+   <% @blood_pressures.each do |bp| %>
+    <%# 上の値または下の値どちらかが入力されている場合のみ表示 %>
+    <% if bp.blood_pressure_systolic.present? || bp.blood_pressure_diastolic.present? %>
+      <tr>
+        <td>
+          <%# どちらか片方だけ入力されていても大丈夫にする %>
+          <%= bp.blood_pressure_systolic.presence || "-" %> /
+          <%= bp.blood_pressure_diastolic.presence || "-" %> mmHg
+        </td>
+        <td><%= bp.measured_at.strftime("%Y-%m-%d %H:%M") if bp.measured_at.present? %></td>
+      </tr>
+    <% end %>
+  <% end %>
 </table>
