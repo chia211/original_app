@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_10_02_045416) do
+ActiveRecord::Schema[7.1].define(version: 2025_10_29_091256) do
   create_table "calendars", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.text "comment"
@@ -27,6 +27,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_10_02_045416) do
     t.integer "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "vital_sign_id"
+    t.index ["vital_sign_id"], name: "index_memos_on_vital_sign_id"
   end
 
   create_table "profiles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

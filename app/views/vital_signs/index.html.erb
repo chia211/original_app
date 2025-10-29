@@ -42,10 +42,36 @@
         </li>
       </ul>
 
+      <div class="container3">
+
+        <%= form_with model: Memo.new, url: profile_memos_path(@selected_profile), local: true do |f| %>
+          <ul class="input-field-memos">
+            <li>
+              <div class="memo-title">
+                <%= f.text_area :title, placeholder: "タイトル", class: "title-input" %>
+              </div>
+            </li>
+            <li>
+              <div class="memo-field">
+                <%= f.text_area :content, placeholder: "メモ", class: "content-input"%>
+              </div>
+            </li>
+            <li class="btn-field">
+              <div>
+                <%= f.submit "登録", class: "submit-btn" %>
+              </div>
+              <div>
+                <%= link_to '一覧', profile_memos_path(@selected_profile), class: "btn" %>
+              </div>
+            <li>
+          </ul>
+          
+        <% end %>
+      </div>
+
 
     <% end %>
 
-    <div class="pictogram" style="background-image: url(<%= asset_path '25858438.png' %>)"></div>
 
   </div>
 
@@ -70,32 +96,7 @@
       <li>メモ：</li>
     </ul> %>
 
-    <div class="container3">
-
-      <%= form_with model: Memo.new, url: profile_memos_path(@selected_profile), local: true do |f| %>
-        <ul class="input-field-memos">
-          <li>
-            <div class="memo-title">
-              <%= f.text_area :title, placeholder: "タイトル", class: "title-input" %>
-            </div>
-          </li>
-          <li>
-            <div class="memo-field">
-              <%= f.text_area :content, placeholder: "メモ", class: "content-input"%>
-            </div>
-          </li>
-          <li class="btn-field">
-            <div>
-              <%= f.submit "登録", class: "submit-btn" %>
-            </div>
-            <div>
-              <%= link_to '一覧', profile_memos_path(@selected_profile), class: "btn" %>
-            </div>
-          <li>
-        </ul>
-        
-      <% end %>
-    </div>
+    
   </div>
 
   

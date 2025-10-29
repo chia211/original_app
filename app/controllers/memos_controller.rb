@@ -8,7 +8,7 @@ class MemosController < ApplicationController
   def create
     @memo = @profile.memos.build(memo_params)
     if @memo.save
-      redirect_to profile_path(@profile), notice: "メモを保存しました"
+      redirect_to root_path, notice: "メモを保存しました"
     else
       render :new, alert: "保存に失敗しました"
     end
